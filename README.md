@@ -4,3 +4,6 @@
 Required Softwares and depenency installation
 PyCharm Community Edition (Free):
 https://www.jetbrains.com/pycharm/download/
+
+Downlord Python
+Download it from https://www.python.org/downloads/
