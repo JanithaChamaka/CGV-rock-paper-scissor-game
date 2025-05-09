@@ -64,8 +64,10 @@ def main():
         # Display scores
         cv2.putText(disp, str(scores[1]), (1112, 215), cv2.FONT_HERSHEY_PLAIN, 4, (0, 0, 0), 6)
         cv2.putText(disp, str(scores[0]), (410, 215), cv2.FONT_HERSHEY_PLAIN, 4, (255, 255, 255), 6)
-        cv2.putText(disp, "Press 'E' to Exit | Press 'R' to Recalibrate Background",
-                    (410, 695), cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 0, 0), 2)
+        exit_text = "Press 'E' to Exit | Press 'R' to Recalibrate Background"
+        (text_width, _), _ = cv2.getTextSize(exit_text, cv2.FONT_HERSHEY_COMPLEX, 0.8, 2)
+        x_center = (disp.shape[1] - text_width) // 2
+        cv2.putText(disp, exit_text, (x_center, 695), cv2.FONT_HERSHEY_COMPLEX, 0.8, (0, 0, 0), 2)
 
         # Show image processing stages
         gray_bgr = cv2.cvtColor(gray_blur, cv2.COLOR_GRAY2BGR)
